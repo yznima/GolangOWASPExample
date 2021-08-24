@@ -27,3 +27,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: docker://owasp/dependency-check:6.2.2
+      args:
+        - --scan
+        - .
+        - --format
+        - ALL
+        - --project
+        - GolangOWASPExample
+        - --out
+        - ./report
