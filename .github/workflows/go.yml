@@ -26,13 +26,9 @@ jobs:
   check-dependency:
     runs-on: ubuntu-latest
     steps:
-    - uses: docker://owasp/dependency-check:6.2.2
-      args:
-        - --scan
-        - .
-        - --format
-        - ALL
-        - --project
-        - GolangOWASPExample
-        - --out
-        - ./report
+    - uses: actions/checkout@v1
+    - name: Go Check Dependency OWASP
+      id: OWASP
+      uses: ./.github/actions/check-dependency
+      with:
+        out-dir: .

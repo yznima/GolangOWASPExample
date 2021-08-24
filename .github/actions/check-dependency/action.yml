@@ -1,0 +1,19 @@
+name: 'Go Check Dependency'
+description: 'Check Go dependency vulnerability using OWASP tool'
+inputs:
+  out-dir:  # id of input
+    description: 'Output directory'
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - --enableExperimental
+    - --format
+    - ALL
+    - --project
+    - GolangOWASPExample
+    - --scan
+    - .
+    - --out
+    - .
