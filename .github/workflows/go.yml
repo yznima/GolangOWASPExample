@@ -21,3 +21,4 @@ jobs:
       with:
         name: owasp-depdendency-report
         path: reports
+        retention-days: 5

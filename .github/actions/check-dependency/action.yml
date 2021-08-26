@@ -13,3 +13,5 @@ runs:
     - .
     - --out
     - ./reports
+    - --failOnCVSS
+    - 7
